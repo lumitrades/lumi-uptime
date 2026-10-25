@@ -2,7 +2,7 @@ name: probe
 
 on:
   schedule:
-    - cron: "*/5 * * * *"   # GitHub may delay or skip; real times are in each record's ts
+    - cron: "*/5 * * * *"   # every 5 min; GitHub may delay or skip runs, so each record carries its real UTC ts
   workflow_dispatch:
 
 permissions:
