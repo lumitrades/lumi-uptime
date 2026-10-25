@@ -1,0 +1,33 @@
+name: probe
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # GitHub may delay or skip; real times are in each record's ts
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe endpoints (unpaid requests only)
+        run: python3 scripts/probe.py "data/probes-$(date -u +%Y-%m).jsonl"
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -q -m "probe $(date -u +%Y-%m-%dT%H:%MZ)" || exit 0
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0
+            sleep $((i * 3))
+          done
+          exit 1
