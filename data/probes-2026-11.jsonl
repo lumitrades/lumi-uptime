@@ -70,3 +70,7 @@
 {"ts":"2026-11-05T09:17:22.637Z","endpoint":"verdict","url":"https://api.lumitrades.io/v1/verdict?url=https://api.example.com/v1/data","status":402,"ms":617.6,"up":true,"run":"42001131780"}
 {"ts":"2026-11-05T09:17:23.255Z","endpoint":"trust_check","url":"https://api.lumitrades.io/v1/trust/check?url=https://api.example.com/v1/data","status":200,"ms":976.9,"up":false,"run":"42001131780"}
 {"ts":"2026-11-05T09:17:24.232Z","endpoint":"well_known_x402","url":"https://lumitrades.io/.well-known/x402","status":200,"ms":188.8,"up":true,"run":"42001131780"}
+{"ts":"2026-11-05T17:28:35.458Z","endpoint":"health","url":"https://api.lumitrades.io/health","status":200,"ms":423.5,"up":true,"run":"42074960118"}
+{"ts":"2026-11-05T17:28:35.882Z","endpoint":"verdict","url":"https://api.lumitrades.io/v1/verdict?url=https://api.example.com/v1/data","status":402,"ms":1194.3,"up":true,"run":"42074960118"}
+{"ts":"2026-11-05T17:28:37.076Z","endpoint":"trust_check","url":"https://api.lumitrades.io/v1/trust/check?url=https://api.example.com/v1/data","status":200,"ms":1427.6,"up":false,"run":"42074960118"}
+{"ts":"2026-11-05T17:28:38.504Z","endpoint":"well_known_x402","url":"https://lumitrades.io/.well-known/x402","status":200,"ms":154.1,"up":true,"run":"42074960118"}
